@@ -1,177 +1,216 @@
 <!DOCTYPE html><html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>شاهر | عالم بلا ظلال</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0b0b0f;
-      --card:#14141c;
-      --accent:#8b0000;
-      --text:#e5e5e5;
-      --muted:#9a9a9a;
+  <title>شاهر درويش | إمبراطورية السرد</title>  <!-- Arabic Elegant Font -->  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Arabic:wght@300;400;600&display=swap" rel="stylesheet">  <style>
+    :root {
+      --bg: #0b0b0d;
+      --panel: #111216;
+      --text: #e6e6e6;
+      --gold: #bfa76a;
+      --blood: #7a1f1f;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:'Cairo',sans-serif;
-      background:radial-gradient(circle at top,var(--card),var(--bg));
-      color:var(--text);
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #14141a, var(--bg));
+      color: var(--text);
+      font-family: 'IBM Plex Arabic', 'Amiri', serif;
+      line-height: 2.1;
+      overflow-x: hidden;
     }
-    header{
-      padding:80px 20px;
-      text-align:center;
-      border-bottom:1px solid #1f1f2a;
+
+    header {
+      padding: 4rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid #222;
     }
-    header h1{
-      font-size:3rem;
-      letter-spacing:2px;
-      margin:0;
+
+    header h1 {
+      font-family: 'Amiri', serif;
+      font-size: 3rem;
+      margin: 0;
+      color: var(--gold);
+      letter-spacing: 1px;
     }
-    header p{
-      color:var(--muted);
-      max-width:700px;
-      margin:20px auto 0;
+
+    header p {
+      opacity: 0.85;
+      max-width: 800px;
+      margin: 1.5rem auto 0;
     }
-    nav{
-      position:sticky;
-      top:0;
-      background:#0b0b0fcc;
-      backdrop-filter:blur(10px);
-      display:flex;
-      justify-content:center;
-      gap:30px;
-      padding:15px;
-      z-index:10;
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 1.5rem;
+      background: linear-gradient(to bottom, #0f0f14, #0b0b0d);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-    nav a{
-      color:var(--text);
-      text-decoration:none;
-      font-weight:600;
-      position:relative;
+
+    nav button {
+      background: transparent;
+      border: 1px solid #333;
+      color: var(--text);
+      padding: 0.7rem 1.5rem;
+      cursor: pointer;
+      font-family: 'IBM Plex Arabic';
+      transition: all 0.3s ease;
     }
-    nav a::after{
-      content:'';
-      position:absolute;
-      bottom:-6px;
-      right:0;
-      width:0;
-      height:2px;
-      background:var(--accent);
-      transition:0.3s;
+
+    nav button:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      box-shadow: 0 0 15px rgba(191,167,106,0.2);
     }
-    nav a:hover::after{width:100%}
-    section{
-      padding:80px 20px;
-      max-width:1200px;
-      margin:auto;
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      display: none;
     }
-    h2{
-      font-size:2.2rem;
-      margin-bottom:30px;
-      border-right:4px solid var(--accent);
-      padding-right:15px;
+
+    section.active { display: block; }
+
+    h2 {
+      font-family: 'Amiri', serif;
+      color: var(--gold);
+      border-right: 4px solid var(--gold);
+      padding-right: 1rem;
+      margin-bottom: 2rem;
     }
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:25px;
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
     }
-    .card{
-      background:linear-gradient(145deg,#151520,#0d0d14);
-      padding:25px;
-      border-radius:16px;
-      box-shadow:0 20px 40px #00000066;
-      transition:transform 0.3s, box-shadow 0.3s;
+
+    .social-icon {
+      font-size: 34px;
+      color: #cfcfcf;
+      transition: transform 0.3s ease, color 0.3s ease;
     }
-    .card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 30px 60px #000000aa;
+
+    .social-icon:hover {
+      transform: scale(1.25);
     }
-    .quote{
-      font-size:1.1rem;
-      line-height:1.8;
-      color:#ddd;
+
+    .social-icon.instagram:hover { color: #e1306c; }
+    .social-icon.facebook:hover { color: #1877f2; }
+    .social-icon.whatsapp:hover { color: #25d366; }
+
+    .book {
+      display: flex;
+      overflow-x: auto;
+      gap: 3rem;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 3rem;
     }
-    .meta{
-      margin-top:15px;
-      font-size:0.9rem;
-      color:var(--muted);
+
+    .page {
+      min-width: 210mm;
+      min-height: 297mm;
+      background: #f4f1ea;
+      color: #111;
+      padding: 3rem;
+      scroll-snap-align: start;
+      box-shadow: 0 0 40px rgba(0,0,0,0.7);
+      position: relative;
+      font-family: 'Amiri', serif;
+      line-height: 2.2;
     }
-    footer{
-      background:#07070b;
-      padding:60px 20px;
-      text-align:center;
-      border-top:1px solid #1f1f2a;
+
+    .quote-page {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 1.6rem;
+      font-style: italic;
     }
-    footer a{
-      color:var(--accent);
-      margin:0 10px;
-      text-decoration:none;
+
+    .page::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      box-shadow: inset 0 0 60px rgba(0,0,0,0.2);
+      pointer-events: none;
     }
-  </style>
-</head>
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      border-top: 1px solid #222;
+      opacity: 0.6;
+    }
+  </style></head>
 <body><header>
   <h1>شاهر درويش</h1>
-  <p>كاتب فنتازيا سوداوية | مؤسس عالم «ثيتانيوم» | حيث تُكتب الأسطورة بدم المعنى لا بالحبر</p>
+  <p>إمبراطورية سردية مظلمة — حيث القدر يُكتب بالدم</p>
 </header><nav>
-  <a href="#about">عنّي</a>
-  <a href="#works">الأعمال</a>
-  <a href="#quotes">اقتباسات</a>
-  <a href="#updates">التحديثات</a>
-  <a href="#contact">التواصل</a>
-</nav><section id="about">
+  <button onclick="show('about')">عنّي</button>
+  <button onclick="show('titanium1')">ثيتانيوم | عالم بلا ظلال</button>
+  <button onclick="show('titanium2')">ثيتانيوم | دماء في الأزقة</button>
+  <button onclick="show('cotton')">بلاد من قطن وحطب</button>
+  <button onclick="show('contact')">التواصل</button>
+</nav><section id="about" class="active">
   <h2>عنّي</h2>
-  <div class="card">
-    <p>
-      أنا شاهر، أكتب عوالم لا تُقرأ بل تُسكن. أعمالي تميل إلى الفنتازيا الملحمية الداكنة،
-      حيث السلطة، الإيمان، الدم، والمصير، تتصارع داخل بنية سردية كثيفة ولغة خاصة.
-    </p>
+  <p>
+    أنا شاهر درويش، روائي وكاتب فنتازيا ملحمية تدور حول القدر والسبب، حول الدماء وسافكيها، حول القاتل وذنب المقتول، حول كل ما يستدعي إنهيار العالم وكل ما يجعل من الرؤوس فريسة سهلة والخيانة السبيل الوحيد للحفاظ على الرؤوس في أماكنها، كل ذلك وأكثر في أكبر رواية عربية في التاريخ، <strong>ثيتانيوم</strong> — إمبراطورية سردية قادمة.
+  </p>
+</section><section id="titanium1">
+  <h2>ثيتانيوم — عالم بلا ظلال</h2>
+  <div class="book">
+    <div class="page quote-page">"أول ضحية"</div>
+    <div class="page">المكان : خليج الملوك _ مملكة أوريوس<br><br>أولى خيوط الفجر تلوح في الأفق البعيد فوق مياه المحيط العظيم...</div>
   </div>
-</section><section id="works">
-  <h2>الأعمال</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>ثيتانيوم – عالم بلا ظلال</h3>
-      <p class="meta">فنتازيا ملحمية | الجزء الأول</p>
-    </div>
-    <div class="card">
-      <h3>ثيتانيوم – دماء في الأزقة</h3>
-      <p class="meta">قيد الكتابة | تصعيد دموي سياسي</p>
-    </div>
-    <div class="card">
-      <h3>بلاد من قطن وحطب</h3>
-      <p class="meta">دراما سوداوية | رواية مستقلة</p>
-    </div>
+</section><section id="titanium2">
+  <h2>ثيتانيوم — دماء في الأزقة</h2>
+  <div class="book">
+    <div class="page quote-page">"أنموت سوياً؟"</div>
+    <div class="page">المكان: مساكن الزيفيريين — حجرة جايوس وكاثرين<br><br>"ما هذا" قال روميرو بيفيريوس وزير الخزينة...</div>
   </div>
-</section><section id="quotes">
-  <h2>اقتباسات</h2>
-  <div class="grid">
-    <div class="card quote">"نحن لا نخون أوطاننا، نحن فقط نكتشف أنها خانتنا أولاً."</div>
-    <div class="card quote">"حين يسقط الإله، لا يموت… بل يغيّر اسمه."</div>
-    <div class="card quote">"الدم لا يصنع الحرب، بل يكشف من كان ينتظرها."</div>
-  </div>
-</section><section id="updates">
-  <h2>التحديثات</h2>
-  <div class="card">
-    <ul>
-      <li>العمل على الجزء الثاني من «ثيتانيوم» – مرحلة الذروة.</li>
-      <li>تجهيز نسخة تقديم عالمية (Pitch Deck).</li>
-      <li>إطلاق موقع رسمي تفاعلي للعالم السردي.</li>
-    </ul>
+</section><section id="cotton">
+  <h2>بلاد من قطن وحطب</h2>
+  <div class="book">
+    <div class="page quote-page">قد تهدم الظروف الإنسان أو تبنيه، أو تخلق إنساناً بلا إنسانية.</div>
+    <div class="page">أقدار على الألسنة<br><br>ويحدث أن يترصدك القدر...</div>
   </div>
 </section><section id="contact">
-  <h2>التواصل</h2>
-  <div class="card">
-    <p>تابعني عبر:</p>
-    <p>
-      <a href="#">Instagram</a> |
-      <a href="#">X</a> |
-      <a href="#">GitHub</a>
-    </p>
+  <h2>التواصل</h2>  <div class="social-links">
+    <a href="https://www.instagram.com/shaher__drwesh?igsh=MXcwMGNsN2ppeXV6ZQ==" target="_blank" class="social-icon instagram" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/share/1Dx6V9uA4s/" target="_blank" class="social-icon facebook" aria-label="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://wa.me/963992931787" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
   </div>
 </section><footer>
-  <p>© 2026 – شاهر درويش | عالم بلا ظلال</p>
-</footer></body>
+  © شاهر درويش — كل الحقوق محفوظة
+</footer><audio id="pageSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4c7c8bca7c.mp3"></audio>
+
+<script>
+  function show(id) {
+    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+
+  document.querySelectorAll('.book').forEach(book => {
+    book.addEventListener('scroll', () => {
+      document.getElementById('pageSound').play();
+    }, { once: true });
+  });
+</script></body>
 </html>
