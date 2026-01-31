@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>شاهر درويش | إمبراطورية السرد</title>  <!-- Arabic Elegant Font -->  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Arabic:wght@300;400;600&display=swap" rel="stylesheet">  <style>
+  <title>شاهر درويش | إمبراطورية السرد</title>  <!-- Arabic Elegant Font -->  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Arabic:wght@300;400;600&display=swap" rel="stylesheet">  <!-- Font Awesome Icons -->  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />  <style>
 :root {
   --bg: #070709;
   --panel: #0f1117;
@@ -84,15 +84,19 @@ section.active { display: block; }
 h2 {
   font-family: 'Amiri', serif;
   color: var(--gold);
-  border-right: 5px solid var(--crimson);
-  padding-right: 1.2rem;
-  margin-bottom: 2.5rem;
+  font-size: 2.6rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-right: 6px solid var(--crimson);
+  padding-right: 1.5rem;
+  margin-bottom: 3rem;
+  text-shadow: 0 0 25px rgba(230,201,122,0.35);
 }
 
 /* Book layout – full visible pages */
 .book {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 3rem;
 }
 
@@ -189,17 +193,23 @@ footer {
     <div class="page">أقدار على الألسنة<br><br>ويحدث أن يترصدك القدر...</div>
   </div>
 </section><section id="contact">
-  <h2>التواصل</h2>  <div class="social-links">
-    <a href="https://www.instagram.com/shaher__drwesh?igsh=MXcwMGNsN2ppeXV6ZQ==" target="_blank" class="social-icon instagram" aria-label="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.facebook.com/share/1Dx6V9uA4s/" target="_blank" class="social-icon facebook" aria-label="Facebook">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-    <a href="https://wa.me/963992931787" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
+  <h2>التواصل</h2>
+  <div class="social-links">
+    <a href="https://www.instagram.com/shaher__drwesh?igsh=MXcwMGNsN2ppeXV6ZQ==" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+    <a href="https://www.facebook.com/share/1Dx6V9uA4s/" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+    <a href="https://wa.me/963992931787" target="_blank" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
   </div>
+</section><section id="quotes">
+  <h2>اقتباسات مختارة</h2>  <h3>من عالم بلا ظلال</h3>
+  <p>«أول الضحايا لم يكن من مات… بل من صدّق أن الظلال سترحمه»</p>
+  <p>«حين سقطت الرايات، فهمنا أن السماء لا تحمي أحدًا»</p>
+  <p>«كل مملكة تبدأ بخيانة، وتنتهي بدم»</p>  <h3>من دماء في الأزقة</h3>
+  <p>«الأزقة لا تنسى خطى القتلة»</p>
+  <p>«بعض الدماء لا تُغسل… بل تُورث»</p>
+  <p>«حين صمتت الأجراس، بدأت الحرب الحقيقية»</p>  <h3>من بلاد من قطن وحطب</h3>
+  <p>«ليست كل النار تحرق… بعضها يدفئ الكارثة»</p>
+  <p>«الناس لا يُكسرون مرة واحدة»</p>
+  <p>«الوطن أحيانًا فكرة… لا مكان»</p>
 </section><footer>
   © شاهر درويش — كل الحقوق محفوظة
 </footer><audio id="pageSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4c7c8bca7c.mp3"></audio>
